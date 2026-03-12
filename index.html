@@ -96,8 +96,30 @@
     .general-banner ul li{display:flex;align-items:flex-start;gap:10px;font-size:0.9rem;color:rgba(255,255,255,0.88);line-height:1.55;}
     .general-banner ul li::before{content:'✦';color:var(--gold);flex-shrink:0;}
 
+    /* TIMELINE */
+    #timeline{background:var(--white);}
+    .timeline-track{display:flex;align-items:flex-start;justify-content:center;position:relative;padding-top:40px;}
+    .timeline-track::before{content:'';position:absolute;top:16px;left:10%;right:10%;height:3px;background:linear-gradient(90deg,var(--green-dark),var(--gold),var(--green-dark));border-radius:2px;}
+    .timeline-node{flex:1;display:flex;flex-direction:column;align-items:center;position:relative;max-width:280px;}
+    .timeline-dot{width:22px;height:22px;background:var(--gold);border-radius:50%;border:4px solid var(--green-dark);box-shadow:0 0 0 4px rgba(245,197,24,0.3);z-index:1;flex-shrink:0;}
+    .timeline-card{margin-top:24px;background:var(--green-dark);border-radius:var(--radius-sm);padding:20px 22px;text-align:center;width:90%;box-shadow:var(--card-shadow);transition:transform var(--transition);}
+    .timeline-card:hover{transform:translateY(-4px);}
+    .timeline-date{font-family:'Space Mono',monospace;font-size:0.82rem;color:var(--gold);margin-bottom:8px;display:block;}
+    .timeline-milestone{font-family:'DM Sans',sans-serif;font-size:0.95rem;font-weight:600;color:var(--white);}
+    /* AGENDA */
+    #agenda{background:var(--bg);}
+    .agenda-list{display:flex;flex-direction:column;position:relative;}
+    .agenda-list::before{content:'';position:absolute;left:130px;top:0;bottom:0;width:2px;background:linear-gradient(180deg,var(--gold) 0%,var(--green-dark) 100%);}
+    .agenda-item{display:flex;align-items:flex-start;position:relative;}
+    .agenda-time{font-family:'Space Mono',monospace;font-size:0.72rem;color:var(--white);background:var(--green-dark);border-radius:var(--radius-sm);padding:7px 10px;white-space:nowrap;min-width:130px;text-align:center;margin-top:8px;flex-shrink:0;}
+    .agenda-dot{width:32px;flex-shrink:0;display:flex;align-items:center;justify-content:center;padding-top:15px;}
+    .agenda-dot::before{content:'';width:12px;height:12px;background:var(--gold);border-radius:50%;border:2px solid var(--white);box-shadow:0 0 0 3px rgba(245,197,24,0.25);}
+    .agenda-body{flex:1;padding:14px 0 14px 16px;border-bottom:1px solid rgba(26,60,46,0.08);}
+    .agenda-activity{font-size:0.95rem;font-weight:500;color:var(--text);}
+    .agenda-item:last-child .agenda-body{border-bottom:none;}
+
     @media(max-width:1024px){.about-grid{grid-template-columns:1fr 1fr;}.subthemes-grid{grid-template-columns:repeat(2,1fr);}}
-    @media(max-width:768px){section{padding:64px 0;}.nav-links{display:none;}.nav-toggle{display:flex;}.hero-title{font-size:clamp(52px,16vw,80px);}.hero-meta-item{font-size:0.7rem;padding:7px 14px;}.about-grid,.guidelines-grid{grid-template-columns:1fr;}.subthemes-grid{grid-template-columns:1fr 1fr;}.general-banner ul{grid-template-columns:1fr;}}
+    @media(max-width:768px){section{padding:64px 0;}.nav-links{display:none;}.nav-toggle{display:flex;}.hero-title{font-size:clamp(52px,16vw,80px);}.hero-meta-item{font-size:0.7rem;padding:7px 14px;}.about-grid,.guidelines-grid{grid-template-columns:1fr;}.subthemes-grid{grid-template-columns:1fr 1fr;}.general-banner ul{grid-template-columns:1fr;}.timeline-track{flex-direction:column;align-items:stretch;gap:24px;}.timeline-track::before{display:none;}.timeline-node{flex-direction:row;max-width:100%;align-items:center;}.timeline-card{margin-top:0;margin-left:16px;width:auto;text-align:left;}.agenda-list::before{display:none;}.agenda-item{flex-direction:column;gap:6px;}.agenda-dot{display:none;}.agenda-time{min-width:unset;align-self:flex-start;}.agenda-body{padding-left:0;}}
   </style>
 </head>
 <body>
@@ -243,6 +265,62 @@
         <li>Certificates provided to all participants</li>
         <li>Best Paper &amp; Best Poster Awards will be presented</li>
       </ul>
+    </div>
+  </div>
+</section>
+
+<!-- TIMELINE: IMPORTANT DATES -->
+<section id="timeline" aria-labelledby="timeline-heading">
+  <div class="container" style="text-align:center;">
+    <span class="section-label reveal">Key Dates</span>
+    <h2 class="section-title reveal" id="timeline-heading">Important Dates</h2>
+    <div class="divider center reveal"></div>
+    <div class="timeline-track" aria-label="Conference milestones">
+      <div class="timeline-node reveal reveal-delay-1">
+        <div class="timeline-dot" aria-hidden="true"></div>
+        <div class="timeline-card">
+          <span class="timeline-date">5th April 2026</span>
+          <div class="timeline-milestone">Abstract Submission Deadline</div>
+        </div>
+      </div>
+      <div class="timeline-node reveal reveal-delay-2">
+        <div class="timeline-dot" aria-hidden="true"></div>
+        <div class="timeline-card">
+          <span class="timeline-date">8th April 2026</span>
+          <div class="timeline-milestone">Final Review &amp; Confirmation</div>
+        </div>
+      </div>
+      <div class="timeline-node reveal reveal-delay-3">
+        <div class="timeline-dot" aria-hidden="true"></div>
+        <div class="timeline-card">
+          <span class="timeline-date">10th April 2026</span>
+          <div class="timeline-milestone">Conference Day 🎓</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- AGENDA -->
+<section id="agenda" aria-labelledby="agenda-heading">
+  <div class="container">
+    <div style="text-align:center;">
+      <span class="section-label reveal">Schedule</span>
+      <h2 class="section-title reveal" id="agenda-heading">Conference Agenda</h2>
+      <p class="reveal" style="color:#4a5e4a;font-size:0.95rem;margin-bottom:12px;">10th April 2026</p>
+      <div class="divider center reveal"></div>
+    </div>
+    <div class="agenda-list" role="list">
+      <div class="agenda-item reveal" role="listitem"><div class="agenda-time">08:30 – 09:30 AM</div><div class="agenda-dot" aria-hidden="true"></div><div class="agenda-body"><div class="agenda-activity">Registration &amp; Welcome Refreshments</div></div></div>
+      <div class="agenda-item reveal" role="listitem"><div class="agenda-time">09:30 – 09:40 AM</div><div class="agenda-dot" aria-hidden="true"></div><div class="agenda-body"><div class="agenda-activity">Invocation / Prayer &amp; Lighting of the Lamp</div></div></div>
+      <div class="agenda-item reveal" role="listitem"><div class="agenda-time">09:40 – 10:15 AM</div><div class="agenda-dot" aria-hidden="true"></div><div class="agenda-body"><div class="agenda-activity">Inaugural Session — Welcome Address, Introduction of Guests, Keynote Address</div></div></div>
+      <div class="agenda-item reveal" role="listitem"><div class="agenda-time">10:15 – 10:30 AM</div><div class="agenda-dot" aria-hidden="true"></div><div class="agenda-body"><div class="agenda-activity">☕ Tea Break</div></div></div>
+      <div class="agenda-item reveal" role="listitem"><div class="agenda-time">10:30 – 12:15 PM</div><div class="agenda-dot" aria-hidden="true"></div><div class="agenda-body"><div class="agenda-activity">Technical Session I — Poster / Oral Presentations</div></div></div>
+      <div class="agenda-item reveal" role="listitem"><div class="agenda-time">12:15 – 01:00 PM</div><div class="agenda-dot" aria-hidden="true"></div><div class="agenda-body"><div class="agenda-activity">Technical Session II — Poster / Oral Presentations</div></div></div>
+      <div class="agenda-item reveal" role="listitem"><div class="agenda-time">01:00 – 01:45 PM</div><div class="agenda-dot" aria-hidden="true"></div><div class="agenda-body"><div class="agenda-activity">🍽️ Lunch Break</div></div></div>
+      <div class="agenda-item reveal" role="listitem"><div class="agenda-time">01:45 – 02:30 PM</div><div class="agenda-dot" aria-hidden="true"></div><div class="agenda-body"><div class="agenda-activity">Poster / Oral Presentation Session</div></div></div>
+      <div class="agenda-item reveal" role="listitem"><div class="agenda-time">02:15 – 02:50 PM</div><div class="agenda-dot" aria-hidden="true"></div><div class="agenda-body"><div class="agenda-activity">Valedictory Session — Certificate Distribution &amp; Vote of Thanks</div></div></div>
+      <div class="agenda-item reveal" role="listitem"><div class="agenda-time">02:50 – 03:00 PM</div><div class="agenda-dot" aria-hidden="true"></div><div class="agenda-body"><div class="agenda-activity">🎵 National Anthem</div></div></div>
     </div>
   </div>
 </section>
