@@ -71,8 +71,19 @@
     .about-card h3{font-size:1.12rem;color:var(--green-dark);margin-bottom:12px;}
     .about-card p{font-size:0.92rem;color:#3a4d3a;line-height:1.78;}
 
-    @media(max-width:1024px){.about-grid{grid-template-columns:1fr 1fr;}}
-    @media(max-width:768px){section{padding:64px 0;}.nav-links{display:none;}.nav-toggle{display:flex;}.hero-title{font-size:clamp(52px,16vw,80px);}.hero-meta-item{font-size:0.7rem;padding:7px 14px;}.about-grid{grid-template-columns:1fr;}}
+    /* THEMES */
+    #themes{background:var(--white);position:relative;overflow:hidden;}
+    .hex-bg{position:absolute;inset:0;opacity:0.04;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='56' height='100'%3E%3Cpolygon points='28,2 54,17 54,47 28,62 2,47 2,17' fill='none' stroke='%231A3C2E' stroke-width='1.5'/%3E%3C/svg%3E");background-size:56px 100px;pointer-events:none;}
+    .theme-quote{font-family:'Playfair Display',serif;font-style:italic;font-size:clamp(1.1rem,2.5vw,1.55rem);color:var(--green-dark);text-align:center;max-width:740px;margin:0 auto 18px;border-left:4px solid var(--gold);padding:18px 32px;background:linear-gradient(135deg,rgba(245,197,24,0.07),rgba(26,60,46,0.05));border-radius:0 var(--radius) var(--radius) 0;}
+    .theme-desc{text-align:center;max-width:620px;margin:0 auto 48px;color:#4a5e4a;font-size:0.98rem;}
+    .subthemes-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
+    .subtheme-tile{background:var(--green-dark);border-radius:var(--radius-sm);padding:28px 20px;text-align:center;border:2px solid transparent;transition:border-color var(--transition),box-shadow var(--transition),transform var(--transition);}
+    .subtheme-tile:hover{border-color:var(--gold);box-shadow:0 0 18px rgba(245,197,24,0.3);transform:translateY(-4px);}
+    .subtheme-tile .tile-icon{font-size:2rem;margin-bottom:12px;display:block;}
+    .subtheme-tile .tile-label{font-family:'DM Sans',sans-serif;font-size:0.9rem;font-weight:500;color:var(--white);line-height:1.4;}
+
+    @media(max-width:1024px){.about-grid{grid-template-columns:1fr 1fr;}.subthemes-grid{grid-template-columns:repeat(2,1fr);}}
+    @media(max-width:768px){section{padding:64px 0;}.nav-links{display:none;}.nav-toggle{display:flex;}.hero-title{font-size:clamp(52px,16vw,80px);}.hero-meta-item{font-size:0.7rem;padding:7px 14px;}.about-grid{grid-template-columns:1fr;}.subthemes-grid{grid-template-columns:1fr 1fr;}}
   </style>
 </head>
 <body>
@@ -146,6 +157,33 @@
         <h3>About IEEE EMBS – JEC</h3>
         <p>The IEEE Engineering in Medicine and Biology Society (EMBS) Student Branch Chapter at Jeppiaar Engineering College promotes the application of engineering in medicine and biological sciences. It organizes technical events, workshops, and conferences to enhance research and innovation and nurture future engineers.</p>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- THEMES -->
+<section id="themes" aria-labelledby="themes-heading">
+  <div class="hex-bg" aria-hidden="true"></div>
+  <div class="container" style="position:relative;z-index:1;">
+    <div style="text-align:center;">
+      <span class="section-label reveal">Focus Area</span>
+      <h2 class="section-title reveal" id="themes-heading">Conference Theme</h2>
+      <div class="divider center reveal"></div>
+    </div>
+    <div class="reveal">
+      <blockquote class="theme-quote">"Recent Advances, Emerging Trends and Innovation in Biotechnology"</blockquote>
+      <p class="theme-desc">The theme focuses on the latest scientific breakthroughs and rapidly evolving technologies in biotechnology transforming healthcare, agriculture, industry, and environmental sustainability.</p>
+    </div>
+    <div class="subthemes-grid">
+      <div class="subtheme-tile reveal reveal-delay-1"><span class="tile-icon">🧬</span><span class="tile-label">Molecular Biology &amp; Genetic Engineering</span></div>
+      <div class="subtheme-tile reveal reveal-delay-1"><span class="tile-icon">💊</span><span class="tile-label">Medical &amp; Pharmaceutical Biotechnology</span></div>
+      <div class="subtheme-tile reveal reveal-delay-2"><span class="tile-icon">⚗️</span><span class="tile-label">Industrial &amp; Enzyme Technology</span></div>
+      <div class="subtheme-tile reveal reveal-delay-2"><span class="tile-icon">🦠</span><span class="tile-label">Microbial &amp; Fermentation Technology</span></div>
+      <div class="subtheme-tile reveal reveal-delay-3"><span class="tile-icon">💻</span><span class="tile-label">Bioinformatics &amp; Computational Biology</span></div>
+      <div class="subtheme-tile reveal reveal-delay-3"><span class="tile-icon">🌱</span><span class="tile-label">Environmental &amp; Agricultural Biotechnology</span></div>
+      <div class="subtheme-tile reveal reveal-delay-4"><span class="tile-icon">🔬</span><span class="tile-label">Nanobiotechnology</span></div>
+      <div class="subtheme-tile reveal reveal-delay-4"><span class="tile-icon">🧪</span><span class="tile-label">Synthetic Biology</span></div>
+      <div class="subtheme-tile reveal reveal-delay-4"><span class="tile-icon">🏥</span><span class="tile-label">Biomedical Engineering &amp; Diagnostics</span></div>
     </div>
   </div>
 </section>
