@@ -82,8 +82,22 @@
     .subtheme-tile .tile-icon{font-size:2rem;margin-bottom:12px;display:block;}
     .subtheme-tile .tile-label{font-family:'DM Sans',sans-serif;font-size:0.9rem;font-weight:500;color:var(--white);line-height:1.4;}
 
+    /* GUIDELINES */
+    #guidelines{background:var(--bg);}
+    .guidelines-grid{display:grid;grid-template-columns:1fr 1fr;gap:32px;margin-bottom:32px;}
+    .guideline-card{background:var(--white);border-radius:var(--radius);padding:36px 32px;box-shadow:var(--card-shadow);}
+    .guideline-card h3{font-size:1.1rem;color:var(--green-dark);margin-bottom:20px;padding-bottom:12px;border-bottom:2px solid var(--gold);}
+    .guideline-list{list-style:none;display:flex;flex-direction:column;gap:12px;}
+    .guideline-list li{display:flex;align-items:flex-start;gap:10px;font-size:0.9rem;color:#3a4d3a;line-height:1.6;}
+    .guideline-list li::before{content:'→';color:var(--gold);font-weight:700;flex-shrink:0;}
+    .general-banner{background:var(--green-dark);border-radius:var(--radius);padding:36px 40px;}
+    .general-banner h3{color:var(--gold);font-size:1.1rem;margin-bottom:20px;}
+    .general-banner ul{display:grid;grid-template-columns:1fr 1fr;gap:14px;list-style:none;}
+    .general-banner ul li{display:flex;align-items:flex-start;gap:10px;font-size:0.9rem;color:rgba(255,255,255,0.88);line-height:1.55;}
+    .general-banner ul li::before{content:'✦';color:var(--gold);flex-shrink:0;}
+
     @media(max-width:1024px){.about-grid{grid-template-columns:1fr 1fr;}.subthemes-grid{grid-template-columns:repeat(2,1fr);}}
-    @media(max-width:768px){section{padding:64px 0;}.nav-links{display:none;}.nav-toggle{display:flex;}.hero-title{font-size:clamp(52px,16vw,80px);}.hero-meta-item{font-size:0.7rem;padding:7px 14px;}.about-grid{grid-template-columns:1fr;}.subthemes-grid{grid-template-columns:1fr 1fr;}}
+    @media(max-width:768px){section{padding:64px 0;}.nav-links{display:none;}.nav-toggle{display:flex;}.hero-title{font-size:clamp(52px,16vw,80px);}.hero-meta-item{font-size:0.7rem;padding:7px 14px;}.about-grid,.guidelines-grid{grid-template-columns:1fr;}.subthemes-grid{grid-template-columns:1fr 1fr;}.general-banner ul{grid-template-columns:1fr;}}
   </style>
 </head>
 <body>
@@ -184,6 +198,51 @@
       <div class="subtheme-tile reveal reveal-delay-4"><span class="tile-icon">🔬</span><span class="tile-label">Nanobiotechnology</span></div>
       <div class="subtheme-tile reveal reveal-delay-4"><span class="tile-icon">🧪</span><span class="tile-label">Synthetic Biology</span></div>
       <div class="subtheme-tile reveal reveal-delay-4"><span class="tile-icon">🏥</span><span class="tile-label">Biomedical Engineering &amp; Diagnostics</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- GUIDELINES -->
+<section id="guidelines" aria-labelledby="guidelines-heading">
+  <div class="container">
+    <div style="text-align:center;">
+      <span class="section-label reveal">Participation</span>
+      <h2 class="section-title reveal" id="guidelines-heading">Submission Guidelines</h2>
+      <div class="divider center reveal"></div>
+    </div>
+    <div class="guidelines-grid">
+      <div class="guideline-card reveal reveal-delay-1">
+        <h3>📄 Paper &amp; Poster Guidelines</h3>
+        <ul class="guideline-list">
+          <li>Participants: UG / PG / Research Scholars</li>
+          <li>Team size: Maximum 4 members</li>
+          <li>Paper structure: Title, Introduction, Objectives, Methodology, Results, Conclusion &amp; References</li>
+          <li>PPT: 10–15 slides (visuals clear &amp; readable)</li>
+          <li>Presentation time: 7 minutes + 3 minutes Q&amp;A</li>
+          <li>Avoid reading from slides; clear explanation expected</li>
+          <li>Plagiarism is strictly prohibited</li>
+        </ul>
+      </div>
+      <div class="guideline-card reveal reveal-delay-2">
+        <h3>📝 Abstract Submission Guidelines</h3>
+        <ul class="guideline-list">
+          <li>Word limit: 150–250 words</li>
+          <li>Must include: Background, Objective, Methods, Results/Findings &amp; Conclusion</li>
+          <li>Abstracts screened by review committee</li>
+          <li>Selected abstracts notified via confirmation mail</li>
+          <li>Submit as <code>.doc</code> or <code>.docx</code></li>
+          <li>Required fields: Title, Author Name(s), Designation &amp; Affiliation, Email, Keywords</li>
+        </ul>
+      </div>
+    </div>
+    <div class="general-banner reveal">
+      <h3>⚡ General Instructions</h3>
+      <ul>
+        <li>Topic must strictly follow Conference Theme / Sub-Themes</li>
+        <li>Decision of judges &amp; organizing committee is final</li>
+        <li>Certificates provided to all participants</li>
+        <li>Best Paper &amp; Best Poster Awards will be presented</li>
+      </ul>
     </div>
   </div>
 </section>
