@@ -62,7 +62,17 @@
     .hero-meta-item{display:flex;align-items:center;gap:8px;background:rgba(255,255,255,0.05);border:1px solid rgba(245,197,24,0.2);border-radius:50px;padding:8px 18px;font-family:'Space Mono',monospace;font-size:0.76rem;color:rgba(255,255,255,0.82);}
     .hero-cta{display:flex;gap:16px;justify-content:center;flex-wrap:wrap;}
 
-    @media(max-width:768px){section{padding:64px 0;}.nav-links{display:none;}.nav-toggle{display:flex;}.hero-title{font-size:clamp(52px,16vw,80px);}.hero-meta-item{font-size:0.7rem;padding:7px 14px;}}
+    /* ABOUT */
+    #about{background:var(--bg);}
+    .about-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;}
+    .about-card{background:var(--white);border-radius:var(--radius);padding:36px 28px;box-shadow:var(--card-shadow);border-top:4px solid var(--gold);transition:transform var(--transition),box-shadow var(--transition);}
+    .about-card:hover{transform:translateY(-6px);box-shadow:0 16px 48px rgba(26,60,46,0.14);}
+    .about-card-icon{width:48px;height:48px;background:var(--green-dark);border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:1.5rem;margin-bottom:20px;}
+    .about-card h3{font-size:1.12rem;color:var(--green-dark);margin-bottom:12px;}
+    .about-card p{font-size:0.92rem;color:#3a4d3a;line-height:1.78;}
+
+    @media(max-width:1024px){.about-grid{grid-template-columns:1fr 1fr;}}
+    @media(max-width:768px){section{padding:64px 0;}.nav-links{display:none;}.nav-toggle{display:flex;}.hero-title{font-size:clamp(52px,16vw,80px);}.hero-meta-item{font-size:0.7rem;padding:7px 14px;}.about-grid{grid-template-columns:1fr;}}
   </style>
 </head>
 <body>
@@ -108,6 +118,34 @@
     <div class="hero-cta reveal reveal-delay-4">
       <a href="#register" class="btn btn-primary" aria-label="Register for VIVORYX 2026">Register Now →</a>
       <a href="#register" class="btn btn-outline" aria-label="Submit your research abstract">Submit Abstract</a>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about" aria-labelledby="about-heading">
+  <div class="container">
+    <div style="text-align:center;">
+      <span class="section-label reveal">The Conference</span>
+      <h2 class="section-title reveal" id="about-heading">About the Conference</h2>
+      <div class="divider center reveal"></div>
+    </div>
+    <div class="about-grid">
+      <div class="about-card reveal reveal-delay-1">
+        <div class="about-card-icon" aria-hidden="true">🔬</div>
+        <h3>About VIVORYX</h3>
+        <p>VIVORYX is a national-level academic conference organized to bring together students, researchers, academicians, and industry professionals in biotechnology. It encourages knowledge sharing, innovative thinking, and scientific discussions through Paper and Poster Presentations. Participants can showcase research ideas, learn about current developments, and interact with experts.</p>
+      </div>
+      <div class="about-card reveal reveal-delay-2">
+        <div class="about-card-icon" aria-hidden="true">🏫</div>
+        <h3>About the Department</h3>
+        <p>The Department of Biotechnology at Jeppiaar Engineering College aims to produce bioengineers with academic excellence to meet global demands. Its mission is to provide quality education, transform technical knowledge into career opportunities, and bridge academia with society.</p>
+      </div>
+      <div class="about-card reveal reveal-delay-3">
+        <div class="about-card-icon" aria-hidden="true">⚙️</div>
+        <h3>About IEEE EMBS – JEC</h3>
+        <p>The IEEE Engineering in Medicine and Biology Society (EMBS) Student Branch Chapter at Jeppiaar Engineering College promotes the application of engineering in medicine and biological sciences. It organizes technical events, workshops, and conferences to enhance research and innovation and nurture future engineers.</p>
+      </div>
     </div>
   </div>
 </section>
